@@ -8,11 +8,12 @@ terraform {
 }
 
 provider "google" {
+  project   = "acquired-storm-450405-a9"
   # Configuration options
 }
 resource "google_service_account" "default" {
   account_id   = "my-custom-sa"
-  project_id   = "acquired-storm-450405-a9"
+  project   = "acquired-storm-450405-a9"
   display_name = "Custom SA for VM Instance"
 }
 
@@ -20,7 +21,7 @@ resource "google_compute_instance" "default" {
   name         = "my-instance"
   machine_type = "n2-standard-2"
   zone         = "us-central1-a"
-  project_id   = "acquired-storm-450405-a9"
+  project   = "acquired-storm-450405-a9"
   tags = ["foo", "bar"]
 
   boot_disk {
